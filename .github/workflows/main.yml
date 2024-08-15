@@ -36,7 +36,7 @@ jobs:
         run: vercel pull --yes --environment=development --token=${{secrets.VERCEL_ACCESS_TOKEN}}
 
       - name: Build Project Artifacts
-        run: vercel build --prod --token=${{secrets.VERCEL_ACCESS_TOKEN}}
+        run: vercel --prebuild --prod --token=${{secrets.VERCEL_ACCESS_TOKEN}}
 
       - name: Deploy Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{secrets.VERCEL_ACCESS_TOKEN}}
