@@ -23,7 +23,7 @@ jobs:
       - name: Install npm
         uses: actions/setup-node@v4
         with: 
-          node-version: 20
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org/' 
 
       - name: Install dependencies
@@ -39,5 +39,5 @@ jobs:
         run: vercel build --prod --token=${{secrets.VERCEL_ACCESS_TOKEN}}
 
       - name: Deploy Artifacts to Vercel
-        run: vercel deploy --prebuilt --token=${{secrets.VERCEL_ACCESS_TOKEN}}
+        run: vercel deploy --prebuilt --prod --token=${{secrets.VERCEL_ACCESS_TOKEN}}
   
